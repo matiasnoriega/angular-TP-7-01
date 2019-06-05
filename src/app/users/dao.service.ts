@@ -55,6 +55,11 @@ export class DaoService {
 	  	.catch(error => {});
   }
 
+  getUser(id: number): Observable<User> {
+	// TODO: send the message _after_ fetching the hero
+	return of(this.getUsers().(user => user.id === id));
+  }
+
 }
 interface UserDao {
 	data: Array<User>;
