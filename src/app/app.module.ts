@@ -7,10 +7,12 @@ import { NgbModule }    from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { UsersModule } from './users/users.module';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
