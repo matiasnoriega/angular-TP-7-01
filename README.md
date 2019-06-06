@@ -1,3 +1,8 @@
+
+# Aclaración Importante
+
+Correr `npm install` para instalar las dependencias antes de compilar el proyecto.
+
 # Iutw
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
