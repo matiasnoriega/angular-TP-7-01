@@ -12,7 +12,7 @@ import { map, switchMap } from 'rxjs/operators';
 export class DaoService {
 
 	private url= 'https://reqres.in/api/users?page=1&per_page=10'
-  
+	
   constructor(
 	  	// inyección de dependencias: http es un servicio
 	  	// provisto HttpClientModule, definido en el root-module
@@ -56,8 +56,18 @@ export class DaoService {
   }
 
   getUser(id: number): Observable<User> {
-	// TODO: send the message _after_ fetching the hero
-	return of(this.getUsers().(user => user.id === id));
+	  
+	return this.http.get(this.url).pipe(
+		switchMap(res => res['data']),
+		map(x => {
+			let u = {
+				id: x['id'],
+				nombre: x['first_name'],
+				apellido: x['last_name'],
+				avatar: x['avatar'],
+			};
+			return u})
+		); // end pipe
   }
 
 }

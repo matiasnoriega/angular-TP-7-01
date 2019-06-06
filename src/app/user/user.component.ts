@@ -10,8 +10,8 @@ import { DaoService }  from '../users/dao.service';
 })
 export class UserComponent implements OnInit {
 
-  user = {
-  }
+  user: User;
+  
   constructor(
     private route: ActivatedRoute,
     private daoService: DaoService,
@@ -20,6 +20,7 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getUser();
   }
 
   getUser(): void {
